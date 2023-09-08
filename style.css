@@ -1,0 +1,22 @@
+body,
+html {
+  background-color: #a60001;
+  height: 100%;
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+  font-size: 3rem;
+}
+
+.container {
+  padding: 2rem;
+}
+
+content {
+  display: flex;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f2b3b3;
+}
