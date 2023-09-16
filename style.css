@@ -15,8 +15,28 @@ header {
 }
 
 content {
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   display: flex;
-  text-align: center;
+  gap: 1rem;
+  flex-direction: column;
   padding: 1rem;
   background-color: #f2b3b3;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+}
+
+footer a {
+  color: #ffc300;
+  margin: 0rem 1rem;
 }
