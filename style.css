@@ -4,6 +4,10 @@ html {
   height: 100%;
 }
 
+:root {
+  font-family: "Roboto";
+}
+
 header {
   text-align: center;
   padding: 1rem;
@@ -11,7 +15,7 @@ header {
 }
 
 .container {
-  padding: 2rem;
+  padding: 1rem 10rem;
 }
 
 content {
@@ -27,7 +31,11 @@ content {
 h2 {
   font-size: 1.5rem;
   font-weight: bold;
-  text-decoration: underline;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.5rem;
 }
 
 footer {
