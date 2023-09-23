@@ -14,9 +14,11 @@ menuItems.forEach((menuItem) =>
 
 function handleDropdownClick(event) {
   const menu = this.querySelector("ul");
+  const dropdownButton = this.querySelector(":first-child");
   const arrowDownIcon = this.querySelector(".arrow-down");
 
   menu.classList.toggle("clicked");
+  dropdownButton.classList.toggle("clicked");
   arrowDownIcon.classList.toggle("rotated");
 }
 
@@ -31,6 +33,7 @@ document.body.addEventListener("click", (event) => {
     dropdowns.forEach((dropdown) => {
       dropdown.querySelector("ul").classList.remove("clicked");
       dropdown.querySelector(".arrow-down").classList.remove("rotated");
+      dropdown.querySelector(":first-child").classList.remove("clicked");
     });
   }
 });
