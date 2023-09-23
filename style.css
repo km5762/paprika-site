@@ -29,10 +29,52 @@ nav {
   justify-content: center;
 }
 
+button {
+  font: inherit;
+  background-color: transparent;
+  border-style: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown button {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem;
+}
+
+.dropdown .arrow-down {
+  transition: transform 0.3s ease;
+}
+
+.dropdown .arrow-down.rotated {
+  transform: rotate(180deg);
+}
+
 .dropdown ul {
+  width: 100%;
   position: absolute;
   z-index: 1;
   display: none;
+}
+
+.dropdown ul.clicked {
+  display: block;
+}
+
+.dropdown ul li {
+  width: 100%;
 }
 
 .container {

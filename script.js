@@ -1,28 +1,23 @@
 const dropdowns = document.querySelectorAll(".dropdown");
 
-const menuItems = document.querySelectorAll(".dropdown li");
+const menuItems = document.querySelectorAll(".dropdown li button");
 
 const content = document.querySelector("content");
 
 dropdowns.forEach((dropdown) =>
-  dropdown.addEventListener("mouseenter", handleDropdownMouseEnter)
-);
-
-dropdowns.forEach((dropdown) =>
-  dropdown.addEventListener("mouseleave", handleDropdownMouseLeave)
+  dropdown.addEventListener("click", handleDropdownClick)
 );
 
 menuItems.forEach((menuItem) =>
   menuItem.addEventListener("click", handleMenuItemClick)
 );
-function handleDropdownMouseEnter(event) {
-  const menu = this.querySelector("ul");
-  menu.style.display = "block";
-}
 
-function handleDropdownMouseLeave(event) {
+function handleDropdownClick(event) {
   const menu = this.querySelector("ul");
-  menu.style.display = "none";
+  const arrowDownIcon = this.querySelector(".arrow-down");
+
+  menu.classList.toggle("clicked");
+  arrowDownIcon.classList.toggle("rotated");
 }
 
 async function handleMenuItemClick(event) {
@@ -30,3 +25,12 @@ async function handleMenuItemClick(event) {
   const html = await response.text();
   content.innerHTML = html;
 }
+
+document.body.addEventListener("click", (event) => {
+  if (!event.target.closest(".dropdown")) {
+    dropdowns.forEach((dropdown) => {
+      dropdown.querySelector("ul").classList.remove("clicked");
+      dropdown.querySelector(".arrow-down").classList.remove("rotated");
+    });
+  }
+});
