@@ -31,16 +31,25 @@ nav {
 
 button {
   font: inherit;
+  font-weight: bold;
   background-color: transparent;
-  border-style: none;
+  border: 1px solid black;
+  border-radius: 4px;
   cursor: pointer;
   font-size: 1.5rem;
 }
 
 button:hover,
+button.clicked,
+button:focus,
+.dropdown ul li button:hover,
+.dropdown ul li button:focus {
+  background-color: white;
+  color: black;
+}
+
 button.clicked {
-  background-color: black;
-  color: white;
+  border-radius: 4px 4px 0px 0px;
 }
 
 .dropdown {
@@ -81,10 +90,11 @@ button.clicked {
 .dropdown ul li button {
   background-color: black;
   color: white;
+  border-radius: 0px;
 }
 
-.dropdown ul li button:hover {
-  color: #a60001;
+.dropdown ul li:last-child button {
+  border-radius: 0px 0px 4px 4px;
 }
 
 .container {
