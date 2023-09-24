@@ -41,9 +41,7 @@ button {
 
 button:hover,
 button.clicked,
-button:focus,
-.dropdown ul li button:hover,
-.dropdown ul li button:focus {
+.dropdown ul li button:hover {
   background-color: white;
   color: black;
 }

@@ -4,13 +4,23 @@ const menuItems = document.querySelectorAll(".dropdown li button");
 
 const content = document.querySelector("content");
 
-dropdowns.forEach((dropdown) =>
-  dropdown.addEventListener("click", handleDropdownClick)
-);
+dropdowns.forEach((dropdown) => {
+  dropdown.addEventListener("click", handleDropdownClick);
+  dropdown.addEventListener("focus", handleDropdownFocus);
+  dropdown.addEventListener("blur", handleDropdownBlur);
+});
 
 menuItems.forEach((menuItem) =>
   menuItem.addEventListener("click", handleMenuItemClick)
 );
+
+function handleDropdownBlur(event) {
+  this.classList.remove("clicked");
+}
+
+function handleDropdownFocus(event) {
+  this.classList.add("clicked");
+}
 
 function handleDropdownClick(event) {
   const menu = this.querySelector("ul");
