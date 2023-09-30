@@ -27,6 +27,7 @@ header {
 nav {
   display: flex;
   justify-content: center;
+  gap: 2rem;
 }
 
 button {
@@ -39,6 +40,24 @@ button {
   font-size: 1.5rem;
   transition: background-color 0.1s ease, color 0.1s ease,
     border-color 0.1s ease;
+}
+
+button a:link {
+  text-decoration: none;
+  color: black;
+}
+
+button a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+button a:hover {
+  text-decoration: none;
+}
+
+button a:active {
+  text-decoration: none;
 }
 
 button:hover,
