@@ -1,6 +1,6 @@
 const dropdowns = document.querySelectorAll(".dropdown");
 
-const menuItems = document.querySelectorAll(".dropdown li button");
+const navButtons = document.querySelectorAll("button[data-href]");
 
 const content = document.querySelector("content");
 
@@ -10,8 +10,8 @@ dropdowns.forEach((dropdown) => {
   dropdown.addEventListener("blur", handleDropdownBlur);
 });
 
-menuItems.forEach((menuItem) =>
-  menuItem.addEventListener("click", handleMenuItemClick)
+navButtons.forEach((menuItem) =>
+  menuItem.addEventListener("click", handleNavButtonClick)
 );
 
 function handleDropdownBlur(event) {
@@ -32,7 +32,7 @@ function handleDropdownClick(event) {
   arrowDownIcon.classList.toggle("rotated");
 }
 
-async function handleMenuItemClick(event) {
+async function handleNavButtonClick(event) {
   const response = await fetch(this.getAttribute("data-href"));
   const html = await response.text();
   content.innerHTML = html;
