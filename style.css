@@ -21,7 +21,7 @@ header {
 
 li {
   list-style: circle;
-  margin: 10px;
+  margin-bottom: 1rem;
 }
 
 .banner {
